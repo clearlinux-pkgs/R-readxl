@@ -4,7 +4,7 @@
 #
 Name     : R-readxl
 Version  : 1.1.0
-Release  : 11
+Release  : 12
 URL      : https://cran.r-project.org/src/contrib/readxl_1.1.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/readxl_1.1.0.tar.gz
 Summary  : Read Excel Files
