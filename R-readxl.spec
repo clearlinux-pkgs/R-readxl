@@ -4,19 +4,23 @@
 #
 Name     : R-readxl
 Version  : 1.3.1
-Release  : 18
+Release  : 19
 URL      : https://cran.r-project.org/src/contrib/readxl_1.3.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/readxl_1.3.1.tar.gz
 Summary  : Read Excel Files
 Group    : Development/Tools
 License  : BSD-2-Clause GPL-3.0
 Requires: R-readxl-lib = %{version}-%{release}
-Requires: R-cellranger
-Requires: R-progress
-Requires: R-tibble
+Requires: R-cli
+Requires: R-mime
+Requires: R-utf8
+BuildRequires : R-Rcpp
 BuildRequires : R-cellranger
+BuildRequires : R-cli
+BuildRequires : R-mime
 BuildRequires : R-progress
 BuildRequires : R-tibble
+BuildRequires : R-utf8
 BuildRequires : buildreq-R
 
 %description
@@ -46,10 +50,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552515948
+export SOURCE_DATE_EPOCH=1552856306
 
 %install
-export SOURCE_DATE_EPOCH=1552515948
+export SOURCE_DATE_EPOCH=1552856306
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -85,8 +89,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library readxl|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  readxl || :
 
 
 %files
@@ -130,7 +133,93 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/readxl/help/readxl.rdx
 /usr/lib64/R/library/readxl/html/00Index.html
 /usr/lib64/R/library/readxl/html/R.css
-/usr/lib64/R/library/readxl/libs/symbols.rds
+/usr/lib64/R/library/readxl/tests/BIFF5-LABEL-record-string-read-mac-10-11.supp
+/usr/lib64/R/library/readxl/tests/testthat.R
+/usr/lib64/R/library/readxl/tests/testthat/helper.R
+/usr/lib64/R/library/readxl/tests/testthat/sheets/65536-rows-xls.xls
+/usr/lib64/R/library/readxl/tests/testthat/sheets/Ekaterinburg_IP_9.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/biff5-label-records.xls
+/usr/lib64/R/library/readxl/tests/testthat/sheets/big-texty-numbers-xls.xls
+/usr/lib64/R/library/readxl/tests/testthat/sheets/big-texty-numbers-xlsx.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/blanks.xls
+/usr/lib64/R/library/readxl/tests/testthat/sheets/blanks.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/dates-1900-LibreOffice.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/dates-1900.xls
+/usr/lib64/R/library/readxl/tests/testthat/sheets/dates-1904.xls
+/usr/lib64/R/library/readxl/tests/testthat/sheets/dates-leap-year-1900-xls.xls
+/usr/lib64/R/library/readxl/tests/testthat/sheets/dates-leap-year-1900-xlsx.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/datetime-rounding.xls
+/usr/lib64/R/library/readxl/tests/testthat/sheets/datetime-rounding.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/embedded-chartsheet.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/empty-named-column.xls
+/usr/lib64/R/library/readxl/tests/testthat/sheets/empty-named-column.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/empty-sheets.xls
+/usr/lib64/R/library/readxl/tests/testthat/sheets/empty-sheets.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/geometry.xls
+/usr/lib64/R/library/readxl/tests/testthat/sheets/geometry.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/inlineStr.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/inlineStr2.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/iris-excel-xls.xls
+/usr/lib64/R/library/readxl/tests/testthat/sheets/iris-excel-xlsx.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/iris-google-doc.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/list_type.xls
+/usr/lib64/R/library/readxl/tests/testthat/sheets/list_type.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/los-angeles-arrests-xlsx.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/missing-first-column.xls
+/usr/lib64/R/library/readxl/tests/testthat/sheets/missing-first-column.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/missing-v-node-xlsx.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/missing-values-xls.xls
+/usr/lib64/R/library/readxl/tests/testthat/sheets/missing-values-xlsx.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/more-than-256-unique-strings-xls.xls
+/usr/lib64/R/library/readxl/tests/testthat/sheets/mtcars.xls
+/usr/lib64/R/library/readxl/tests/testthat/sheets/names-need-repair-xls.xls
+/usr/lib64/R/library/readxl/tests/testthat/sheets/names-need-repair-xlsx.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/new_line_errors.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/no-styles-or-sharedStrings-parts.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/no-yes-col-names.xls
+/usr/lib64/R/library/readxl/tests/testthat/sheets/no-yes-col-names.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/nonstandard-xml-ns-prefix.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/numbers-as-na-and-shared-strings-xls.xls
+/usr/lib64/R/library/readxl/tests/testthat/sheets/numbers-as-na-and-shared-strings-xlsx.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/richtext-coloured.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/sheet-xml-lookup.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/skipping.xls
+/usr/lib64/R/library/readxl/tests/testthat/sheets/skipping.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/style-only-cells.xls
+/usr/lib64/R/library/readxl/tests/testthat/sheets/style-only-cells.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/texty-dates-xls.xls
+/usr/lib64/R/library/readxl/tests/testthat/sheets/texty-dates-xlsx.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/types.xls
+/usr/lib64/R/library/readxl/tests/testthat/sheets/types.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/unnamed-duplicated-columns.xls
+/usr/lib64/R/library/readxl/tests/testthat/sheets/unnamed-duplicated-columns.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/utf8-sheet-names.xls
+/usr/lib64/R/library/readxl/tests/testthat/sheets/utf8-sheet-names.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/vietnamese-utf8.xls
+/usr/lib64/R/library/readxl/tests/testthat/sheets/vietnamese-utf8.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/sheets/whitespace-xls.xls
+/usr/lib64/R/library/readxl/tests/testthat/sheets/whitespace-xlsx.xlsx
+/usr/lib64/R/library/readxl/tests/testthat/test-coercion.R
+/usr/lib64/R/library/readxl/tests/testthat/test-col-names.R
+/usr/lib64/R/library/readxl/tests/testthat/test-col-types.R
+/usr/lib64/R/library/readxl/tests/testthat/test-compatibility.R
+/usr/lib64/R/library/readxl/tests/testthat/test-dates.R
+/usr/lib64/R/library/readxl/tests/testthat/test-empty.R
+/usr/lib64/R/library/readxl/tests/testthat/test-encoding.R
+/usr/lib64/R/library/readxl/tests/testthat/test-example.R
+/usr/lib64/R/library/readxl/tests/testthat/test-formats.R
+/usr/lib64/R/library/readxl/tests/testthat/test-geometry.R
+/usr/lib64/R/library/readxl/tests/testthat/test-missing-values.R
+/usr/lib64/R/library/readxl/tests/testthat/test-n-max.R
+/usr/lib64/R/library/readxl/tests/testthat/test-problems.R
+/usr/lib64/R/library/readxl/tests/testthat/test-read-excel.R
+/usr/lib64/R/library/readxl/tests/testthat/test-return.R
+/usr/lib64/R/library/readxl/tests/testthat/test-richtext.R
+/usr/lib64/R/library/readxl/tests/testthat/test-shared-string-table.R
+/usr/lib64/R/library/readxl/tests/testthat/test-sheets.R
+/usr/lib64/R/library/readxl/tests/testthat/test-skipping.R
+/usr/lib64/R/library/readxl/tests/testthat/test-trim-ws.R
+/usr/lib64/R/library/readxl/tests/testthat/test-xml-namespaces.R
 
 %files lib
 %defattr(-,root,root,-)
