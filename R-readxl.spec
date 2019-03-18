@@ -4,16 +4,13 @@
 #
 Name     : R-readxl
 Version  : 1.3.1
-Release  : 19
+Release  : 20
 URL      : https://cran.r-project.org/src/contrib/readxl_1.3.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/readxl_1.3.1.tar.gz
 Summary  : Read Excel Files
 Group    : Development/Tools
 License  : BSD-2-Clause GPL-3.0
 Requires: R-readxl-lib = %{version}-%{release}
-Requires: R-cli
-Requires: R-mime
-Requires: R-utf8
 BuildRequires : R-Rcpp
 BuildRequires : R-cellranger
 BuildRequires : R-cli
@@ -50,10 +47,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552856306
+export SOURCE_DATE_EPOCH=1552869384
 
 %install
-export SOURCE_DATE_EPOCH=1552856306
+export SOURCE_DATE_EPOCH=1552869384
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
