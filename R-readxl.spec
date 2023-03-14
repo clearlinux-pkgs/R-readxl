@@ -4,7 +4,7 @@
 #
 Name     : R-readxl
 Version  : 1.4.2
-Release  : 53
+Release  : 54
 URL      : https://cran.r-project.org/src/contrib/readxl_1.4.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/readxl_1.4.2.tar.gz
 Summary  : Read Excel Files
@@ -21,9 +21,6 @@ BuildRequires : R-cpp11
 BuildRequires : R-progress
 BuildRequires : R-tibble
 BuildRequires : buildreq-R
-# Suppress stripping binaries
-%define __strip /bin/true
-%define debug_package %{nil}
 
 %description
 # readxl <img src='man/figures/logo.png' align="right" height="139" />
@@ -55,10 +52,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1676052284
+export SOURCE_DATE_EPOCH=1678837654
 
 %install
-export SOURCE_DATE_EPOCH=1676052284
+export SOURCE_DATE_EPOCH=1678837654
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/R-readxl
 cp %{_builddir}/readxl/LICENSE.note %{buildroot}/usr/share/package-licenses/R-readxl/bf07378c279323df68098ac0edfd7a53bf54842a || :
