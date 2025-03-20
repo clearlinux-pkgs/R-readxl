@@ -6,10 +6,10 @@
 # autospec commit: fbbd4e3
 #
 Name     : R-readxl
-Version  : 1.4.4
-Release  : 63
-URL      : https://ftp.osuosl.org/pub/cran/src/contrib/readxl_1.4.4.tar.gz
-Source0  : https://ftp.osuosl.org/pub/cran/src/contrib/readxl_1.4.4.tar.gz
+Version  : 1.4.5
+Release  : 64
+URL      : https://ftp.osuosl.org/pub/cran/src/contrib/readxl_1.4.5.tar.gz
+Source0  : https://ftp.osuosl.org/pub/cran/src/contrib/readxl_1.4.5.tar.gz
 Summary  : Read Excel Files
 Group    : Development/Tools
 License  : BSD-2-Clause MIT
@@ -59,10 +59,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1740700427
+export SOURCE_DATE_EPOCH=1742478188
 
 %install
-export SOURCE_DATE_EPOCH=1740700427
+export SOURCE_DATE_EPOCH=1742478188
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/R-readxl
 cp %{_builddir}/readxl/LICENSE.note %{buildroot}/usr/share/package-licenses/R-readxl/bf07378c279323df68098ac0edfd7a53bf54842a || :
